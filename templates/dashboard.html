@@ -1,0 +1,19 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Dashboard</h2>
+
+    <div class="alert alert-primary text-center">
+        Welcome — you’re logged in 🎯
+    </div>
+
+    <div class="card p-3">
+        <p>From here, you can manage text, images, projects, and blog posts.</p>
+    </div>
+
+    <div class="text-center mt-3">
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+{% endblock %}

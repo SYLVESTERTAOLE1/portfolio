@@ -1,0 +1,41 @@
+{% extends "base_admin.html" %}
+{% block title %}Manage Projects{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Manage Projects</h1>
+
+<!-- Add New Project -->
+<div class="project-card">
+    <h2>Add New Project</h2>
+    <form action="{{ url_for('admin_project_add') }}" method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Project Title" required>
+        <textarea name="description" rows="4" placeholder="Project Description" required></textarea>
+        <input type="file" name="image">
+        <button type="submit" class="btn btn-success">Add Project</button>
+    </form>
+</div>
+
+<!-- Existing Projects -->
+{% for project in projects %}
+<div class="project-card">
+    <h2>{{ project[1] }}</h2>
+    {% if project[3] %}
+        <img src="{{ url_for('static', filename='uploads/' ~ project[3]) }}" class="img-fluid mb-3">
+    {% endif %}
+    <p>{{ project[2] }}</p>
+
+    <form action="{{ url_for('admin_project_edit', id=project[0]) }}" method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" value="{{ project[1] }}" required>
+        <textarea name="description" rows="3" required>{{ project[2] }}</textarea>
+        <input type="file" name="image">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+    <form action="{{ url_for('admin_project_delete', id=project[0]) }}" method="POST" class="mt-2">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+{% else %}
+<p class="text-center">No projects found.</p>
+{% endfor %}
+{% endblock %}

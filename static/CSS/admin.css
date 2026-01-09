@@ -1,0 +1,139 @@
+/* admin.css */
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0f1d;
+    color: #ffffff;
+    padding-top: 70px; /* Space for fixed navbar */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    color: #00d9ff;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0a0f1d;
+}
+
+.navbar a {
+    color: #cfd8ff;
+    transition: color 0.2s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #00d9ff;
+    font-weight: bold;
+}
+
+/* Forms */
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #1a1f36;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #00d9ff;
+    background-color: #0a0f1d;
+    color: #fff;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0077cc;
+}
+
+/* Buttons */
+button, .btn {
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #00d9ff;
+    color: #000;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0077cc;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* Cards for projects/blogs */
+.card, .project-card {
+    background-color: #1a1f36;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #00d9ff;
+}
+
+table th {
+    background-color: #1a2238;
+    color: #00d9ff;
+}
+
+table td {
+    background-color: #0a0f1d;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar .navbar-nav {
+        text-align: center;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+}
